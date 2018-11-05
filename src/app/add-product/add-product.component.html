@@ -1,0 +1,123 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<br>
+<div class="s-page">
+  <div class="Container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+
+        <h1 class= "text-xs-center">Add a New Product</h1>
+
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <fieldset [disabled]="isSubmitting">
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                type="text"
+                placeholder="Product Code"
+                formControlName="productcode" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="text"
+                placeholder="Name"
+                formControlName="productname" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="text"
+                placeholder="Short Description"
+                formControlName="shortdescription" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <textarea class="form-control form-control-md"
+                rows="8"
+                placeholder="Long Description"
+                formControlName="longdescription">
+              </textarea>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="text"
+                placeholder="Dimensions"
+                formControlName="dimensions" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="text"
+                placeholder="Category"
+                formControlName="category" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="number"
+                placeholder="MRP"
+                formControlName="mrp" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="number"
+                placeholder="SSP"
+                formControlName="ssp" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="number"
+                placeholder="YMP"
+                formControlName="ymp" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="file"
+                title="Primary Image"
+                (change)="onPrimaryImage($event)"
+                formControlName="primaryimage" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="file"
+                title="Gallery Images"
+                formControlName="galleryimages" multiple (change)="onGalleryImages($event)"/>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-md"
+                type="file"
+                title="Usage Instructions"
+                (change)="onUsageInstructions($event)"
+                formControlName="usageinstructions" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <textarea class="form-control form-control-md"
+                rows="8"
+                placeholder="Extra Information"
+                formControlName="extrainformation">
+              </textarea>
+            </fieldset>
+
+            <button class="btn btn-lg btn-primary text-white pull-xs-right"
+              type="submit">
+              Add
+            </button>
+
+          </fieldset>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>

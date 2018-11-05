@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<br>
+<h2 class= "text-xs-center">Your Products</h2>
+<mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<mat-table #table [dataSource]="dataSource" matSort matSortActive="product_id" matSortDirection="asc" matSortDisableClear>
+
+  <ng-container matColumnDef="primary_image">
+    <mat-header-cell *matHeaderCellDef> Product </mat-header-cell>
+    <mat-cell *matCellDef="let element"><img src="element.primary_image" height="50px" width="50px"/></mat-cell>
+  </ng-container>
+
+    <ng-container matColumnDef="product_id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Product Code </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.product_id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.status}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="categories">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.categories}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mrp">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> MRP </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.mrp}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ssp">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> SSP </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.ssp}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ymp">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> YMP </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.ymp}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)=onRowClick(row)></mat-row>
+
+  </mat-table>
+
+  <mat-paginator [length]="dataCount" [pageSize]="3" [pageSizeOptions]="[5, 10, 25]">
+  </mat-paginator>

@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6>">
+<slideshow [height]="height"
+           [minHeight]="'525px'"
+           [autoPlay]="true"
+           [showArrows]="false"
+           [imageUrls]="imageSources"
+           [lazyLoad]="imageSources?.length > 1"
+           [autoPlayWaitForLazyLoad]="true">
+</slideshow>
+</div>
+<div class="col-md-8">
+  <div class="card" style="width :30rem; float :right">
+   <div class="card-body">
+       <h3 class="card-title">{{product?.name}}</h3>
+       <h5 class="card-title">Provided by: {{product?.seller.company_name}}</h5>
+       <h5 class="card-title">Category: {{product?.categories}}</h5>
+     <h6 class="card-text">{{product?.short_description}} </h6>
+     <p class="card-text"><b>{{product?.long_description}}</b>: </p>
+     <p class="card-text"><b>{{product?.dimensions}}</b>: </p>
+     <p class="card-text"><b>{{product?.long_description}}</b>: </p>
+     <p class="card-text"><b>{{product?.mrp}}</b>: </p>
+     <p class="card-text"><b>But at PMP, you can get it at {{product?.ymp}}</b>: </p>
+   </div>
+ </div>
+</div>
+</div>

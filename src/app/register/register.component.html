@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+<br>
+<div class="s-page">
+  <div class="Container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+
+        <h1 class= "text-xs-center">Registration</h1>
+
+        <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+          <fieldset [disabled]="isSubmitting">
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                type="text"
+                placeholder="Company Name"
+                formControlName="companyname" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg"
+                type="text"
+                placeholder="Name"
+                formControlName="ownername" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <textarea class="form-control form-control-lg"
+                rows="8"
+                placeholder="Address"
+                formControlName="address">
+              </textarea>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg"
+                type="email"
+                placeholder="Email"
+                formControlName="email" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg"
+                type="number"
+                placeholder="Telephone"
+                formControlName="telephone" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg"
+                type="text"
+                placeholder="GST Number"
+                formControlName="gstnumber" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg"
+                type="password"
+                placeholder="Password"
+                formControlName="password" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg"
+                type="password"
+                placeholder="Confirm Password"
+                formControlName="confirmpassword" />
+            </fieldset>
+
+            <button class="btn btn-lg updateBtn text-white pull-xs-right"
+              type="submit">
+              Register
+            </button>
+
+          </fieldset>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>

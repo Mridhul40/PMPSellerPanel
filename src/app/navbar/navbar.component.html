@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm bg-light fixed-top">
+    <a class="navbar-brand" href="#" routerLink="{{home}}">PMP</a>
+  <ul class="navbar-nav ml-auto">
+  <div *ngIf="!loggedIn; then thenblock else elseBlock"></div>
+  <ng-template #thenblock>
+    <li class="nav-item"  text-align="right">
+      <a class="nav-link" routerLink="/login" href="#">Login</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/register" class="nav-link" href="#">Register</a>
+    </li>
+</ng-template>
+<ng-template #elseBlock>
+  <li class="nav-item"  text-align="right">
+    <a class="nav-link" routerLink="/list-product" href="#">My Products</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="/add-product" class="nav-link" href="#">Add Product</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="/logout" class="nav-link" href="#">Logout</a>
+  </li>
+</ng-template>
+
+  </ul>
+</nav>
